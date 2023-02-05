@@ -15,7 +15,7 @@ const info = document.querySelector('.country-info');
 input.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 
 function onInput(e) {
-  if (e.target.value.length !== 0) {
+  if (e.target.value.trim().length !== 0) {
     fetchCountries(e.target.value.trim())
       .then(data => createTargetCountries(data))
       .catch(error => {
